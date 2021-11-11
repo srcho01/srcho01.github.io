@@ -5,5 +5,4 @@ permalink: /about/
 image: /images/pic02.jpg
 ---
 
-Kookmin Univ. Software
-21 Seorim Cho
+Kookmin Univ. Software 21 Seorim Cho
