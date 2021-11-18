@@ -17,3 +17,9 @@ paginate: 4
 author: Seorim Cho
 
 gems: [jekyll-paginate]
+
+# Custom vars
+comment:
+  provider: "disqus"
+  disqus:
+    shortname: "srcho01"
