@@ -1,27 +1,5 @@
-# Site settings
-title: MyBlog
-email: srcho01@naver.com
-description: > # this means to ignore newlines until "baseurl:"
-  Kookmin Univ. Software
-  21 Seorim Cho
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://srcho01.github.io" # the base hostname & protocol for your site
-twitter_username: 
-github_username: srcho01
-
-# Build settings
-markdown: kramdown
-
-paginate: 4
-
-author: Seorim Cho
-
-gems: [jekyll-paginate]
-
-# Custom vars
-version: 1.1.0
-google_analytics_id: #UA-XXXX-Y
-comment:
-  provider: "disqus"
-  disqus:
-    shortname: "srcho01"
+# General Jekyll Config
+highlighter: rouge
+url: http://example.com
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]

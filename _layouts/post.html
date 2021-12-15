@@ -1,112 +1,27 @@
-<!DOCTYPE HTML>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  {% include header.html %}
-	<body>
+---
+layout: default
+---
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<p class="meta">
+  {{ page.date | date: "%B %d, %Y" }} 
+  <a href="/">
+    <i class="home fa fa-home"></i>
+  </a>
+</p>
 
-				{% include head.html %}
-				<!-- Main -->
-					<div id="main">
+<h1 class="title">{{ page.title }}</h1>
 
-						<!-- Post -->
-            <article class="post">
-              <header>
-                <div class="title">
-                  <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-                <!-- <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p> -->
-                </div>
-                <div class="meta">
-                  <time class="published" datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%B %d, %Y" }}</time>
-                  {% for category in page.categories limit:1 %}
-                    <a href="#">{{ category }}</a>
-                  {% endfor %}
+<div id="post">
+  {{ content }}
+</div>
 
-        <!--
-        <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-        -->
-                </div>
-              </header>
-              {% if page.image %}
-                <a href="{{ page.url }}" class="image featured"><img src="{{page.image}}" alt="" /></a>
-              {% endif %}
-              {{ content }}
-              <footer>
-                <ul class="stats">
-                {% for tag in page.tags limit:3 %}
-                  <li><a href="#">{{ tag }}</a></li>
-                {% endfor %}
-        <!--
-        <li><a href="#">General</a></li>
-        <li><a href="#" class="icon fa-heart">28</a></li>
-        <li><a href="#" class="icon fa-comment">128</a></li>
-        -->
-                </ul>
-              </footer>
-           </article>
-  					<ul class="actions pagination">
-  					  {% if page.previous %}
-  	  				  <li><a href="{{ page.previous.url }}" class="button big previous">Previous Post</a></li>
-  						{% else %}
-  						  <li><a href="#" class="disabled button big previous">Previous Post</a></li>
-  						{% endif %}
-							{% if page.next %}
-  						  <li><a href="{{ page.next.url }}" class="button big next">Next Post</a></li>
-  						{% else %}
-  						  <li><a href="#" class="disabled button big next">Next Post</a></li>
-  						{% endif %}
-  					</ul>
-					</div>
-
-				<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-						{% include intro.html %}
-
-						<!-- Mini Posts -->
-						{% include miniposts.html %}
-
-						<!-- Posts List -->
-
-						<!-- About -->
-					  {% include about.html %}
-
-						<!-- Footer -->
-						{% include footer.html %}
-					</section>
-			</div>
-		<!-- Scripts -->
-		{% include scripts.html %}
-	</body>
-</html>
-
-{% if page.comments %}
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    let PAGE_URL = "{{site.url}}{{page.url}}"
-    let PAGE_IDENTIFIER = "{{page.url}}"
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://srcho01.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+    <li>
+      <span>{{ post.date | date_to_string }} &raquo;</span> <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
