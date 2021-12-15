@@ -1,5 +1,10 @@
 # General Jekyll Config
 highlighter: rouge
-url: http://example.com
+url: https://srcho01.github.io
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+
+comment:
+  provider:     "disqus"
+  disqus:
+    shortname:  "srcho01"
