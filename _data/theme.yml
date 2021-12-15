@@ -7,7 +7,7 @@ highlight_color: '#3498db'
 social:
   github: https://github.com/srcho01/srcho01.github.io
   #bitbucket: philipj
-  hacker_news: srcho01
+  hacker_news: 
   #stackexchange: 348619
   #stackoverflow: 348619
   twitter: 
@@ -30,4 +30,4 @@ google_analytics_key: UA-xxxx-x
 show_disclaimer: true
 
 # Toggle link/icon to view atom feed (/atom.xml) in sidebar
-show_atom_feed: true
+show_atom_feed: false
