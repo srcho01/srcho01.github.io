@@ -8,3 +8,11 @@ comment:
   provider:     "disqus"
   disqus:
     shortname:  "srcho01"
+
+# Analytics
+analytics:
+  provider               : "google-gtag" 
+                          # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "G-KSW9DK5PPK"
+    anonymize_ip         : # true, false (default)
