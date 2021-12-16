@@ -78,7 +78,7 @@ git clone으로 복제해 적용한 테마에는 GitHub 주소나 이름 등 샘
   - /_data/theme.yml - 이름 & 이메일 변경, GitHub 주소 변경, hacker_news와 twitter는 사용하지 않으므로 삭제, atom feed false로 변경
   - /_includes/footer.html - 블로그 포스트 목록 하단 문구 변경
   - /_includes/sidebar.html - 블로그 소개글 변경, 이메일 정보 추가
-  - /_includes/social.html - GitHub만 사용하므로 "Follow Me" 대신 "GitHub"로 변경</br></br>  
-
+  - /_includes/social.html - GitHub만 사용하므로 "Follow Me" 대신 "GitHub"로 변경  
+  
 * **변경한 테마 모습**  
 ![](https://i.imgur.com/iMyBGhJ.png)
