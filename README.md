@@ -4,7 +4,7 @@
 
 ## 1. GitHub 저장소 생성
 나의 GitHub 페이지에 들어가서 블로그에 사용할 저장소를 생성한다.  
-이 때, 저장소의 이름은 `<사용자이름>.github.io`의 형태이고, 공개 범위는 public이어야 한다.  
+이 때, 저장소의 이름은 <사용자이름>.github.io의 형태이고, 공개 범위는 public이어야 한다.  
 내가 자주 사용하는 아이디인 "srcho01"을 이용하여 저장소 srcho01.github.io을 생성했다.</br></br>
 
 ## 2. 로컬 저장소와 원격 저장소 연결
@@ -29,14 +29,14 @@ index.html 파일을 commit하고 원격 저장소에 push한다.
 나의 블로그 <https://srcho01.github.io/>에 방문하여 테스트 페이지가 잘 뜨는지 확인한다.</br></br>
 
 ## 4. jekyll 환경 준비
-나는 프로젝트를 윈도우에서 진행하고 있기 때문에 먼저 [`Ruby+Devkit`](https://rubyinstaller.org/downloads/)을 설치한다.  
+나는 프로젝트를 윈도우에서 진행하고 있기 때문에 먼저 [Ruby+Devkit](https://rubyinstaller.org/downloads/)을 설치한다.  
 그 다음, command 창에서 `gem install jekyll bundler`를 이용해 지킬을 설치한다.  
 설치가 완료됐다면 `jekyll -v` 명령어로 지킬이 잘 설치되었는지 확인한다.</br></br>
 
 ## 5. jekyll 시작 
 command 창에서 블로그 로컬 저장소로 이동하여 `jekyll new . --force` 명령어로 로컬 저장소에 지킬을 설치한다.  
 `bundle exec jekyll serve` 명령어로 지킬 서버를 실행한다.  
-인터넷 창에서 `localhost:4000`로 접속하여 기본 테마로 된 지킬 사이트가 생성되었음을 확인한다.</br></br>
+인터넷 창에서 localhost:4000로 접속하여 기본 테마로 된 지킬 사이트가 생성되었음을 확인한다.</br></br>
 
 ## 6. 블로그와 지킬 사이트 연결
 `git rm <파일명>` 명령어를 이용해 기존에 작성했던 index.html을 삭제하여 지킬 사이트가 내 블로그에서 정상적으로 실행되지 않는 문제를 방지한다.  
@@ -44,7 +44,7 @@ command 창에서 블로그 로컬 저장소로 이동하여 `jekyll new . --for
 마찬가지로, 나의 블로그에 방문하여 지킬 사이트가 정상적으로 실행되는지 확인한다.</br></br>
 
 ## 7. 포스트 작성
-블로그의 _posts 폴더 아래에 `YYYY-MM-DD-<제목>.md` 형태로 파일을 생성한다.  
+블로그의 _posts 폴더 아래에 YYYY-MM-DD-<제목>.md 형태로 파일을 생성한다.  
 포스트 제일 처음은 아래와 같은 형식으로 시작한다.  
 ```
 ---
@@ -79,6 +79,6 @@ git clone으로 복제해 적용한 테마에는 GitHub 주소나 이름 등 샘
   - /_includes/footer.html - 블로그 포스트 목록 하단 문구 변경
   - /_includes/sidebar.html - 블로그 소개글 변경, 이메일 정보 추가
   - /_includes/social.html - GitHub만 사용하므로 "Follow Me" 대신 "GitHub"로 변경  
-  
+
 * **변경한 테마 모습**  
 ![](https://i.imgur.com/iMyBGhJ.png)
