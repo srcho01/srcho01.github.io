@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GitHub 블로그에 Google Analytics 연결하기"
+title: "GitHub 블로그에 Google Analytics 연결"
 date:   2021-12-16 20:36:09 +0900
 categories: jekyll update
 comments: true
