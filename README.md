@@ -1,77 +1,84 @@
-# Lagom
-
-> #### *Lagom* is a Swedish word with no direct English equivalent, meaning "just the right amount"
-
-Lagom, a [Jekyll][j] blog theme with just the right amount of style. 
-
-Extracted lovingly from [http://mdswanson.com][mds] for your enjoyment!
+# 프로젝트 Build 과정 
+#### 소프트웨어학부 20213085 조서림<br/><br/></br>
 
 
+## 1. GitHub 저장소 생성
+나의 GitHub 페이지에 들어가서 블로그에 사용할 저장소를 생성한다.  
+이 때, 저장소의 이름은 `<사용자이름>.github.io`의 형태이고, 공개 범위는 public이어야 한다.  
+내가 자주 사용하는 아이디인 "srcho01"을 이용하여 저장소 srcho01.github.io을 생성했다.</br></br>
 
-* Responsive, based on [Skeleton][skeleton]
-* [Font Awesome][font-awesome] for icons
-* Open Sans from [Google web fonts][gfonts]
-* Built-in Atom feed
+## 2. 로컬 저장소와 원격 저장소 연결
+command 창에서 `cd` 명령어를 이용해 로컬 저장소를 생성하고 싶은 위치로 이동한다.  
+그 후, `git clone <원격 저장소 URL>` 명령어로 원격 저장소를 나의 컴퓨터에 복제한다.</br></br>
 
-[![Live Demo](https://img.shields.io/badge/view-live--demo-blue.svg?style=flat-square)](http://lagom.mdswanson.com/)
+## 3. 블로그 페이지 테스트
+블로그가 정상적으로 동작하는지 확인하기 위해 html을 이용해 다음과 같은 index.html 파일을 작성한다.
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GitHub Page Test</title>
+    </head>
+    <body>
+        <h2>This is test page.</h2>
+        <p>이 페이지가 잘 보인다면 성공!</p>
+    </body>
+</html>
+```
+index.html 파일을 commit하고 원격 저장소에 push한다.  
+나의 블로그 <https://srcho01.github.io/>에 방문하여 테스트 페이지가 잘 뜨는지 확인한다.</br></br>
 
-## Action Shots
-![](http://i.imgur.com/Pmzk4j1.png)
-![](http://i.imgur.com/CT2Xvug.png)
-![](http://i.imgur.com/XisjqW1.jpg)
+## 4. jekyll 환경 준비
+나는 프로젝트를 윈도우에서 진행하고 있기 때문에 먼저 [`Ruby+Devkit`](https://rubyinstaller.org/downloads/)을 설치한다.  
+그 다음, command 창에서 `gem install jekyll bundler`를 이용해 지킬을 설치한다.  
+설치가 완료됐다면 `jekyll -v` 명령어로 지킬이 잘 설치되었는지 확인한다.</br></br>
 
-## Installation
+## 5. jekyll 시작 
+command 창에서 블로그 로컬 저장소로 이동하여 `jekyll new . --force` 명령어로 로컬 저장소에 지킬을 설치한다.  
+`bundle exec jekyll serve` 명령어로 지킬 서버를 실행한다.  
+인터넷 창에서 `localhost:4000`로 접속하여 기본 테마로 된 지킬 사이트가 생성되었음을 확인한다.</br></br>
 
-- [Fork this repository][fork]
-- Clone it: `git clone https://github.com/YOUR-USER/lagom`
-- Install the [GitHub Pages gem][pages] (includes Jekyll): `bundle install`
-- Run the jekyll server: `jekyll serve`
+## 6. 블로그와 지킬 사이트 연결
+`git rm <파일명>` 명령어를 이용해 기존에 작성했던 index.html을 삭제하여 지킬 사이트가 내 블로그에서 정상적으로 실행되지 않는 문제를 방지한다.  
+삭제한 index.html 파일과 새로 생성된 지킬 파일들을 commit하고 push한다.  
+마찬가지로, 나의 블로그에 방문하여 지킬 사이트가 정상적으로 실행되는지 확인한다.</br></br>
 
-You should have a server up and running locally at <http://localhost:4000>.
+## 7. 포스트 작성
+블로그의 _posts 폴더 아래에 `YYYY-MM-DD-<제목>.md` 형태로 파일을 생성한다.  
+포스트 제일 처음은 아래와 같은 형식으로 시작한다.  
+```
+---
+layout: post
+title: "포스트 제목"
+date:   2021-12-16 13:05:12 +0900
+categories: jekyll update
+---
+```
+그 아래에 마크다운 형식을 이용해 포스트 내용을 작성한다.  
+11월 12일 예시로 주어진 "MongoDB 정리" 포스트를 작성해 보았다.  
+윈격 저장소에 commit, push 한 후 블로그에 접속해 작성한 포스트가 등록되었음을 확인한다.</br></br>
 
-## Customization
+## 8. 새로운 테마 적용
+* **테마 가져오기**  
+먼저, 지킬 테마를 무료로 제공하는 [사이트](http://jekyllthemes.org/)에 방문하여 원하는 테마를 고른다.  
+나는 아래의 *Lagom* 테마를 선택하였다.
+![](https://i.imgur.com/wIOOGWk.png)
+해당 테마의 GitHub 홈페이지에 방문해 깃허브 URL을 복사한다.  
+우선 블로그 로컬 저장소와 다른 위치에 복사한 URL을 이용해 테마 저장소를 복제한다.  
+블로그 로컬 저장소 _posts 폴더에는 내가 작성한 포스트가 존재하므로, _posts 폴더를 제외하고 테마 저장소의 파일들을 로컬 저장소에 추가하거나 덮어쓰기 한다.  
 
-Next you'll want to change a few things. Most of them can be changed directly in
-[theme.yml][config]. That's where you can add your social links, change the accent
-color, stuff like that.
+* **테마 반영하기**  
+원격 저장소에 새로 생성된 파일들을 commit, push하여 반영한다.  
+블로그에 접속해 테마가 정상적으로 적용되었는지 확인한다.
 
-There's a few other places that you'll want to change, too:
+* **테마 정보 변경하기**  
+git clone으로 복제해 적용한 테마에는 GitHub 주소나 이름 등 샘플 정보가 담겨 있으므로 나의 블로그에 맞게 변경한다.  
+내가 변경한 파일과 정보들은 다음과 같다.  
+  - _config.yml - 블로그 URL 변경
+  - /_data/theme.yml - 이름 & 이메일 변경, GitHub 주소 변경, hacker_news와 twitter는 사용하지 않으므로 삭제, atom feed false로 변경
+  - /_includes/footer.html - 블로그 포스트 목록 하단 문구 변경
+  - /_includes/sidebar.html - 블로그 소개글 변경, 이메일 정보 추가
+  - /_includes/social.html - GitHub만 사용하므로 "Follow Me" 대신 "GitHub"로 변경</br></br>  
 
-- [CNAME][cname]: If you're using this on GitHub Pages with a custom domain name, 
-  you'll want to change this to be the domain you're going to use. All that should 
-  be in here is a domain name on the first line and nothing else (like: `example.com`).
-- [favicon.png][favicon]: This is the icon in your browser's address bar. You should 
-  change it to whatever you'd like.
-- [logo.png][logo]: A square-ish image that appears in the upper-left corner
-
-## Deployment
-
-You should deploy with [GitHub Pages][pages] - it's just easier.
-
-All you should have to do is rename your repository on GitHub to be
-`username.github.io`. Since everything is on the `gh-pages` branch, you
-should be able to see your new site at <http://username.github.io>.
-
-## Licensing
-
-[MIT](https://github.com/swanson/lagom/blob/master/LICENSE) with no
-added caveats, so feel free to use this on your site without linking back to
-me or using a disclaimer or anything silly like that.
-
-## Contact
-I'd love to hear from you at [@_swanson][twitter]. Feel free to open issues if you
-run into trouble or have suggestions. Pull Requests always welcome.
-
-[j]: http://jekyllrb.com/
-[mds]: http://mdswanson.com
-[skeleton]: http://www.getskeleton.com/
-[font-awesome]: http://fortawesome.github.io/Font-Awesome/
-[gfonts]: http://www.google.com/fonts/specimen/Open+Sans
-[fork]: https://github.com/swanson/lagom/fork
-[config]: https://github.com/swanson/lagom/blob/master/_data/theme.yml
-[cname]: https://github.com/swanson/lagom/blob/master/CNAME
-[favicon]: https://github.com/swanson/lagom/blob/master/favicon.png
-[logo]: https://github.com/swanson/lagom/blob/master/logo.png
-[pages]: http://pages.github.com
-[twitter]: https://twitter.com/_swanson
-[pages]: https://github.com/github/pages-gem
+* **변경한 테마 모습**  
+![](https://i.imgur.com/iMyBGhJ.png)
